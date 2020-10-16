@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>ためしにつくった</title>
+	<style>
+	 body{background:#e0ffff;text-align:center;}
+	 header{color:#696969; font-weight:bold;}
+	 input{width:300px;height:40px;text-align:center;}
+	 footer{color:#ff0000;position:absolute;bottom:100;margin-left:100px;}
+	 .q{display:flex;justify-content:center;align-items:center;flex-direction:column;height:500px;}
+	 .w{border:1px solid #000000;}
+	 #kooo h1{font-size:40px;}
+	 #kooo {font-size:30px;}
+	 #koo {font-size:30px;}
+	 #koooo {font-size:30px;}
+	</style>
+  </head>
+  <header>氏名・反映したい文字を入力すると、送信時刻とともに画面に反映されます。</header>
+  <body>
+
+    <div id= "main"><input type="text" id="name" placeholder="氏名を入力"></div>
+    <div id= "main2"><input type="text" id="msg" placeholder="内容を入力"></div>
+    <div id= "main3"><input type="button" value="表示" onclick="b()"></div>
+
+	<div class = "q">
+	<div class = "w">
+	<div id="koooo"></div>
+	<div id ="koo"><h1></h1></div>
+	<div id="kooo"><h1>ここに表示されます。</h1></div>
+	</div>
+	</div>
+  <a href="oneclick.html">※絶対にここをクリックしないでください</a>
+    <script>
+	var now = new Date();
+  var b =	function(){
+	var a = document.getElementById("koo");
+	a.innerText = document.getElementById("name").value + "さん";
+
+	var c = document.getElementById("kooo");
+	c.innerText = document.getElementById("msg").value;
+
+	 var target = document.getElementById("koooo");
+
+      var Year = now.getFullYear();
+      var Month = now.getMonth()+1;
+      var Date = now.getDate();
+      var Hour = now.getHours();
+      var Min = now.getMinutes();
+      var Sec = now.getSeconds();
+
+      target.innerHTML = Year + "年" + Month + "月" + Date + "日" + Hour + ":" + Min + ":" + Sec;
+	}
+	</script>
+
+  </body>
+  <footer>※2回目以降は送信時刻が変わらないのでブラウザをリロードして、もう一度行うと時刻が更新されます。</footer>
+</html>
